@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.AmbientLight?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FX.MainController">
+   <children>
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar>
+               <Menu text="Plik">
+                  <MenuItem mnemonicParsing="false" onAction="#onLoadClicked" text="Wczytaj" />
+                  <MenuItem onAction="#onSaveClicked" text="Zapisz jako" />
+               </Menu>
+               <Menu mnemonicParsing="false" text="Edycja">
+                 <items>
+                   <MenuItem mnemonicParsing="false" onAction="#onAddClicked" text="Dodaj hasło" />
+                 </items>
+               </Menu>
+            </MenuBar>
+         </top>
+         <center>
+            <TableView fx:id="passwordTable" prefHeight="368.0" prefWidth="607.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="passwordCol" prefWidth="75.0" text="Hasło" />
+                <TableColumn fx:id="sourceCol" prefWidth="224.0" text="Źródło" />
+                  <TableColumn fx:id="noteCol" prefWidth="297.0" text="Notatka" />
+                  <TableColumn fx:id="loginCol" prefWidth="297.0" text="Login" />
+                  <TableColumn fx:id="URLCol" prefWidth="75.0" text="URL" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+         <left>
+            <ScrollPane prefHeight="375.0" prefWidth="143.0" BorderPane.alignment="CENTER">
+               <content>
+                  <ImageView fitHeight="431.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pasek.jpg" />
+                     </image>
+                  </ImageView>
+               </content>
+            </ScrollPane>
+         </left>
+      </BorderPane>
+      <AmbientLight color="CHARTREUSE" layoutX="-7.0" layoutY="78.0" />
+   </children>
+</AnchorPane>
